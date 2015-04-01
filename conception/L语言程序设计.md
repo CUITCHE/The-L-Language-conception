@@ -49,18 +49,18 @@ L语言有两种选择结构：如果…就…语句；据…选择语句。
 
 C语言：
 
-    <span class="hljs-tag">if</span> (a == <span class="hljs-number">0</span>){
-     <span class="hljs-attribute">printf</span>(“%d\n”, a);
+    <span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-tag"</span>></span>if<span class="hljs-tag"></<span class="hljs-title">span</span>></span> (a == <span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-number"</span>></span>0<span class="hljs-tag"></<span class="hljs-title">span</span>></span>){
+     <span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-attribute"</span>></span>printf<span class="hljs-tag"></<span class="hljs-title">span</span>></span>(“%d\n”, a);
     }
-    <span class="hljs-tag">else</span>{
-     ++<span class="hljs-attribute">a</span>;
+    <span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-tag"</span>></span>else<span class="hljs-tag"></<span class="hljs-title">span</span>></span>{
+     ++<span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-attribute"</span>></span>a<span class="hljs-tag"></<span class="hljs-title">span</span>></span>;
     }
-    `</pre>
+    `<span class="hljs-tag"></<span class="hljs-title">pre</span>></span>
 
     L语言：
 
-    <pre>`如果<span class="hljs-literal">a</span>是<span class="hljs-number">0</span>就，说：<span class="hljs-literal">a</span>；（“说”是一个内置的功能函数调用，冒号“：”后面是参数传递）
-    否则（不然）<span class="hljs-literal">a</span>+<span class="hljs-number">1</span>。
+    <span class="hljs-tag"><<span class="hljs-title">pre</span>></span>`如果<span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-literal"</span>></span>a<span class="hljs-tag"></<span class="hljs-title">span</span>></span>是<span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-number"</span>></span>0<span class="hljs-tag"></<span class="hljs-title">span</span>></span>就，说：<span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-literal"</span>></span>a<span class="hljs-tag"></<span class="hljs-title">span</span>></span>；（“说”是一个内置的功能函数调用，冒号“：”后面是参数传递）
+    否则（不然）<span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-literal"</span>></span>a<span class="hljs-tag"></<span class="hljs-title">span</span>></span>+<span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs-number"</span>></span>1<span class="hljs-tag"></<span class="hljs-title">span</span>></span>。
 
 可以看出，L语言表达使人更容易理解，而且也很简洁。我们再来一段长的C语言if-else的表达式，看看，我们L语言是怎么表达的。
 
