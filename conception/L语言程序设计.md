@@ -41,16 +41,15 @@ L语言是采用中文编程，则一条语句段（作用域）结束就为句�
 
 ## 第五章    选择结构程序设计
 
-> L语言有两种选择结构：如果…就…语句；据…选择语句。
->     `</pre>
+L语言有两种选择结构：如果…就…语句；据…选择语句。
 
-    ### 如果语句
+### 如果语句：
 
-    如果语句的用法很灵活，有如下关键字可以和它配合，就，不然，否则。接下来我用一段C语言代码和L语言代码进行对比，读者就会很容易懂了。
+如果语句的用法很灵活，有如下关键字可以和它配合，就，不然，否则。接下来我用一段C语言代码和L语言代码进行对比，读者就会很容易懂了。
 
-    C语言：
+C语言：
 
-    <pre>`<span class="hljs-tag">if</span> (a == <span class="hljs-number">0</span>){
+    <span class="hljs-tag">if</span> (a == <span class="hljs-number">0</span>){
      <span class="hljs-attribute">printf</span>(“%d\n”, a);
     }
     <span class="hljs-tag">else</span>{
@@ -62,147 +61,127 @@ L语言是采用中文编程，则一条语句段（作用域）结束就为句�
 
     <pre>`如果<span class="hljs-literal">a</span>是<span class="hljs-number">0</span>就，说：<span class="hljs-literal">a</span>；（“说”是一个内置的功能函数调用，冒号“：”后面是参数传递）
     否则（不然）<span class="hljs-literal">a</span>+<span class="hljs-number">1</span>。
-    `</pre>
 
-    可以看出，L语言表达使人更容易理解，而且也很简洁。我们再来一段长的C语言if-else的表达式，看看，我们L语言是怎么表达的。
+可以看出，L语言表达使人更容易理解，而且也很简洁。我们再来一段长的C语言if-else的表达式，看看，我们L语言是怎么表达的。
 
-    C语言：
+C语言：
 
-    <pre>`<span class="hljs-tag">if</span> (a == <span class="hljs-number">0</span>){
-     <span class="hljs-attribute">printf</span>(“%d\n”, a);
-    }
-    <span class="hljs-tag">else</span> <span class="hljs-tag">if</span> (a == <span class="hljs-number">5</span>){
-     <span class="hljs-attribute">--a</span>;
-    }
-    <span class="hljs-tag">else</span>{
-     ++<span class="hljs-attribute">a</span>;
-    }
-    `</pre>
+if (a == 0){
+ printf(“%d\n”, a);
+}
+else if (a == 5){
+ --a;
+}
+else{
+ ++a;
+}
 
-    L语言：
+L语言：
 
-    <pre>`如果<span class="hljs-literal">a</span>是<span class="hljs-number">0</span>就，说：<span class="hljs-literal">a</span>；
-    如果<span class="hljs-literal">a</span>是<span class="hljs-number">5</span>就，--<span class="hljs-literal">a</span>；
-    否则（不然也可以）<span class="hljs-literal">a</span>+<span class="hljs-number">1</span>。
-    `</pre>
+如果a是0就，说：a；
+如果a是5就，--a；
+否则（不然也可以）a+1。
 
-    这里的如果子句，只要有一句结果是真值就不会执行后续语句，只有都不满足所有如果子句，才会执行否则子句。
+这里的如果子句，只要有一句结果是真值就不会执行后续语句，只有都不满足所有如果子句，才会执行否则子句。
 
-    “就”关键字后面跟的是子句，可以用多个逗号隔开，直至遇到“；”分号。这里为什么后面是分号呢，因为在这里，如果、如果、否则，构成了一个选择结构，对于系统来说，他们是一个段落一个整体。假如，我们这样写：
+“就”关键字后面跟的是子句，可以用多个逗号隔开，直至遇到“；”分号。这里为什么后面是分号呢，因为在这里，如果、如果、否则，构成了一个选择
+结构，对于系统来说，他们是一个段落一个整体。假如，我们这样写：
 
-    <pre>`如果<span class="hljs-literal">a</span>是<span class="hljs-number">0</span>就，说：<span class="hljs-literal">a</span>。
-    如果<span class="hljs-literal">a</span>是<span class="hljs-number">5</span>就，--<span class="hljs-literal">a</span>。
-    否则（不然也可以）<span class="hljs-literal">a</span>+<span class="hljs-number">1</span>。
-    `</pre>
+如果a是0就，说：a。
+如果a是5就，--a。
+否则（不然也可以）a+1。
 
-    用C语言表达就是：
+用C语言表达就是：
 
-    <pre>`<span class="hljs-tag">if</span> (a == <span class="hljs-number">0</span>){
-     <span class="hljs-attribute">printf</span>(“%d\n”, a);
-    }
-    <span class="hljs-tag">if</span> (a == <span class="hljs-number">5</span>){
-     <span class="hljs-attribute">--a</span>;
-    };
-    <span class="hljs-tag">else</span>{
-     ++<span class="hljs-attribute">a</span>;
-    }
-    `</pre>
+if (a == 0){
+ printf(“%d\n”, a);
+}
+if (a == 5){
+ --a;
+};
+else{
+ ++a;
+}
 
-    注意第二个if后面的分号。显然这种写法是有语法错误的。
-    是的，L语言的写法也是有语法错误的，否则一定要和如果构成子句，否则是语法错误。
+注意第二个if后面的分号。显然这种写法是有语法错误的。
+是的，L语言的写法也是有语法错误的，否则一定要和如果构成子句，否则是语法错误。
 
-    如果语句的嵌套：
+如果语句的嵌套：
 
-    C语言：
+if (a == 0){
+ a++;
+ if (a % 2 == 0){
+  printf(“%d\n”, a);
+ }
+}
 
-    <pre>`<span class="hljs-tag">if</span> (a == <span class="hljs-number">0</span>){
-     <span class="hljs-attribute">a</span>++;
-     <span class="hljs-tag">if</span> (a % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>){
-      <span class="hljs-attribute">printf</span>(“%d\n”, a);
-     }
-    }
-    `</pre>
+如果a是0就，
+a++，
+如果a%2是0就，
+说：a。
 
-    L语言：
+if (a == 0){
+if (a % 2 == 0){
+  printf(“%d\n”, a);
+  a++;
+ }
+}
 
-    <pre>`如果<span class="hljs-operator">a</span>是<span class="hljs-number">0</span>就，
-    <span class="hljs-operator">a</span>++，
-    如果<span class="hljs-operator">a</span>%<span class="hljs-number">2</span>是<span class="hljs-number">0</span>就，
-    说：<span class="hljs-operator">a</span>。
-    `</pre>
+如果a是0就，
+如果a%2是0就，
+说：a，
+a++。
 
-    C语言：
+### 选择语句：
 
-    <pre>`<span class="hljs-tag">if</span> (a == <span class="hljs-number">0</span>){
-     <span class="hljs-tag">if</span> (a % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>){
-      <span class="hljs-attribute">printf</span>(“%d\n”, a);
-      <span class="hljs-attribute">a</span>++;
-     }
-    }
-    `</pre>
+如果语句只有两个分支选择（虽然你可以嵌套），而选择语句就提供了多条分支，理论上是无限制的分支。让我们来看看语法规则吧。
 
-    L语言：
+据a选择，
+条件1：子句1；
+条件2：子句2；
+其它：子句N。
 
-    <pre>`如果<span class="hljs-operator">a</span>是<span class="hljs-number">0</span>就，
-    如果<span class="hljs-operator">a</span>%<span class="hljs-number">2</span>是<span class="hljs-number">0</span>就，
-    说：<span class="hljs-operator">a</span>，
-    <span class="hljs-operator">a</span>++。
-    `</pre>
+这里分号“；”代表和其他条件保持并列关系，即执行到这儿就会跳出选择语句。可以参考中文分号“；”的用法，假如你把分号“；”写成了句号“。”，那么会打破这种并列关系，执行这个条件后会继续往后面执行。其它表示默认的情况下该执行的入口。我们依然会用C语言和L语言来作对比。
 
-    选择语句：
+C语言：
 
-    如果语句只有两个分支选择（虽然你可以嵌套），而选择语句就提供了多条分支，理论上是无限制的分支。让我们来看看语法规则吧。
+switch(grade){
+    case ‘A’: printf(“85~100\n”);break;
+    case ‘B’: printf(“70~84\n”);break;
+    case ‘C’: printf(“60~69\n”);break;
+    case ‘D’: printf(“0~59\n”);break;
+    default: printf(“error grade!\n”);break;
+}
 
-    <pre>`据<span class="hljs-literal">a</span>选择，
-    条件<span class="hljs-number">1</span>：子句<span class="hljs-number">1</span>；
-    条件<span class="hljs-number">2</span>：子句<span class="hljs-number">2</span>；
-    其它：子句N。
-    `</pre>
+L语言：
 
-    这里分号“；”代表和其他条件保持并列关系，即执行到这儿就会跳出选择语句。可以参考中文分号“；”的用法，假如你把分号“；”写成了句号“。”那么会打破这种并列关系，执行这个条件后会继续往后面执行。其它表示默认的情况下该执行的入口。我们依然会用C语言和L语言来作对比。
+据grade选择，
+‘A’：说：“85~100\n”；
+‘B’：说：“70~84\n”；
+‘C’：说：“60~69\n”；
+‘D’：说：“0~59\n”；
+其它：说：“error grade!\n”。
 
-    C语言：
+一定要记得是分号。其它子句后面是句号，以此来完成这个选择结构。当然在条件子句中你也可以使用“句号”，如果这样可以带来你想要的效果的话。
 
-    <pre>`<span class="hljs-keyword">switch</span>(grade){
-        <span class="hljs-keyword">case</span> ‘A’: <span class="hljs-built_in">printf</span>(“<span class="hljs-number">85</span>~<span class="hljs-number">100</span>\n”);<span class="hljs-keyword">break</span>;
-        <span class="hljs-keyword">case</span> ‘B’: <span class="hljs-built_in">printf</span>(“<span class="hljs-number">70</span>~<span class="hljs-number">84</span>\n”);<span class="hljs-keyword">break</span>;
-        <span class="hljs-keyword">case</span> ‘C’: <span class="hljs-built_in">printf</span>(“<span class="hljs-number">60</span>~<span class="hljs-number">69</span>\n”);<span class="hljs-keyword">break</span>;
-        <span class="hljs-keyword">case</span> ‘D’: <span class="hljs-built_in">printf</span>(“<span class="hljs-number">0</span>~<span class="hljs-number">59</span>\n”);<span class="hljs-keyword">break</span>;
-        <span class="hljs-keyword">default</span>: <span class="hljs-built_in">printf</span>(“error grade!\n”);<span class="hljs-keyword">break</span>;
-    }
-    `</pre>
+## 第六章    循环结构设计
 
-    L语言：
+C语言或者后续的语言，有`while、do…while、for（变种）、for each循环`，我也在思考着，“是否照着这些用汉语模仿一下，仔细一想，太low了”。所以，我制定了以下几种循环机制。
 
-    <pre>`据grade选择，
-    ‘A’：说：“<span class="hljs-number">85</span>~<span class="hljs-number">100</span><span class="hljs-string">\n”；</span>
-    ‘B’：说：“<span class="hljs-number">70</span>~<span class="hljs-number">84</span><span class="hljs-string">\n”；</span>
-    ‘C’：说：“<span class="hljs-number">60</span>~<span class="hljs-number">69</span><span class="hljs-string">\n”；</span>
-    ‘D’：说：“<span class="hljs-number">0</span>~<span class="hljs-number">59</span><span class="hljs-string">\n”；</span>
-    其它：说：“error grade!<span class="hljs-string">\n”。</span>
-    `</pre>
+`当且仅当...就，`语句块。
 
-    一定要记得是分号。其它子句后面是句号，以此来完成这个选择结构。当然在条件子句中你也可以使用“句号”，如果这样可以带来你想要的效果的话。
+这里我采用了数学在定义某一个东西的时候，常用的唯一条件用语，没办法，谁让我的高中班主任是数学老师呢。
 
-    ## 第六章    循环结构设计
+C语言：
 
-    C语言或者后续的语言，有while、do…while、for（变种）、for each循环，我也在思考着，“是否照着这些用汉语模仿一下，仔细一想，太low了”。所以，我制定了以下几种循环机制。
+while(true){
+ //TODO:…
+}
 
-    `当且仅当...就，`语句块。
+L语言：
 
-    这里我采用了数学在定义某一个东西的时候，常用的唯一条件用语，没办法，谁让我的高中班主任是数学老师呢。
-
-    C语言：
-
-    <pre>`<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>){
-     <span class="hljs-comment">//TODO:…</span>
-    }
-    `</pre>
-
-    L语言：
-
-    <pre>`当且仅当对就，
-    （TODO：…）。
+当且仅当对就，
+（TODO：…）。
 
 C语言的for语句经常用于遍历，通过“遍历”这种“体感”，我发现可以这么定义遍历。
 
