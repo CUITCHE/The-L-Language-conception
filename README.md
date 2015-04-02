@@ -10,4 +10,4 @@ L语言概念版
 
 至此，共同努力！
 
-<iframe name="show" id="show" width="500" height="500" src="https://github.com/CUITCHE/The-L-Language-conception/blob/master/conception/1.L%E8%AF%AD%E8%A8%80%E5%89%8D%E7%9E%BB.md"/>
+<iframe name="show" id="show" width="500" height="500" src="https://github.com/CUITCHE/The-L-Language-conception/blob/master/conception/1.L%E8%AF%AD%E8%A8%80%E5%89%8D%E7%9E%BB.md"></iframe>
